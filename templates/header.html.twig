@@ -1,32 +1,44 @@
 <div class="header">
-    <div class="flexOne">
-        <a>
-            <img src="{{ asset('img/logo/logo-fcp.png') }}" alt="">
+    <div class="flexOne accueilHeader">
+        <a href="{{ path('index') }}">
+            <img src="{{ asset('img/logo/logo-fcp.png') }}" alt="Logo FCP" title="Accueil FCP" width="60" height="60">
         </a>
     </div>
-    <div class="flexSix">
-        <div>
-            <a href="">
-                Club
-            </a>
+    <div class="flexFive menuHeader">
+        <div class="title">
+            <a href="">Accueil</a>
         </div>
-        <div>
-            <a href="">
-                Équipes
-            </a>
+        <div class="title">
+            <a href="">Club</a>
+            <div class="menuDeroulant">
+                <div class="sousTitle">
+                    <a href="{{ path('historique') }}">Historique</a>
+                </div>
+                <div class="sousTitle">
+                    <a href="{{ path('organigramme') }}">Organigramme</a>
+                </div>
+                <div class="sousTitle">
+                    <a href="{{ path('infrastructure') }}">Infrastructure</a>
+                </div>
+                <div class="sousTitle">
+                    <a href="{{ path('tarifInscription') }}">Tarif et Inscription</a>
+                </div>
+                <div class="sousTitle">
+                    <a href="{{ path('pef') }}">Programme Educatif Fédéral (PEF)</a>
+                </div>
+            </div>
         </div>
-        <div>
-            <a href="">
-                Actualités
-            </a>
+        <div class="title">
+            <a href="">Équipes</a>
         </div>
-        <div>
-            <a href="">
-                Contact
-            </a>
+        <div class="title">
+            <a href="">Actualités</a>
+        </div>
+        <div class="title">
+            <a href="">Contact</a>
         </div>
     </div>
-    <div class="flexOne">
+    <div class="flexOne connexionHeader">
         <a href="">
             Connexion
         </a>

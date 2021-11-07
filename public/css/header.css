@@ -1,0 +1,116 @@
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    margin: auto;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    background-color: var(--green-color);
+    border-top: 2px solid var(--green-color);
+    border-bottom: 2px solid var(--green-color);
+    color: white;
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.accueilHeader{
+    background-color: white;
+    border-radius: 0 50px 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accueilHeader a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+
+.menuHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5%;
+}
+
+.menuHeader .title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuHeader .title:hover a{
+    background-color: white;
+    color: var(--green-color);
+}
+
+.menuHeader .title a{
+    padding: 0.5em 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuHeader .title:hover .menuDeroulant{
+    display: flex;
+}
+
+.menuHeader .menuDeroulant{
+    position: absolute;
+    background-color: white;
+    display: none;
+    color: var(--green-color);
+    flex-direction: column;
+    top: 100%;
+    width: 98%;
+    padding: 1%;
+}
+
+.menuHeader .menuDeroulant .sousTitle{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1% 0;
+}
+
+.menuHeader .menuDeroulant .sousTitle a{
+    text-transform: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 1% 2%;
+}
+
+
+
+.menuHeader .menuDeroulant .sousTitle a:hover{
+    background-color: var(--green-color);
+    color: white;
+
+}
+
+
+.connexionHeader{
+    background-color: white;
+    border-radius: 50px 0 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.connexionHeader a{
+    color: var(--green-color);
+}

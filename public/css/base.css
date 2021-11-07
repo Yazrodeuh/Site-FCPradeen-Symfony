@@ -1,3 +1,7 @@
+:root{
+    --green-color: #003900
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,5 +16,21 @@ main{
 }
 
 .flexOne{   flex: 1;    }
+.flexFive{   flex: 5;    }
 .flexSix{   flex: 6;    }
 
+.titrePage{
+    padding: 2% 0;
+}
+
+.titrePage div{
+    margin: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titrePage div h1{
+    color: var(--green-color);
+    font-size: 35px;
+}

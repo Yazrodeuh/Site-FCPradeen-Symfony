@@ -13,13 +13,15 @@
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
+            <script defer src="{{ asset('js/base.js') }}"></script>
+
         {% endblock %}
     </head>
     <body>
-        <header>
+        <header id="Header">
             {% include 'header.html.twig' %}
         </header>
-        <main>
+        <main id="Main">
             {% block body %}{% endblock %}
         </main>
         <footer>
