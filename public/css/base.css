@@ -1,0 +1,16 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    margin: auto;
+}
+
+main{
+    font-size: 18px;
+}
+
+.flexOne{   flex: 1;    }
+.flexSix{   flex: 6;    }
+
