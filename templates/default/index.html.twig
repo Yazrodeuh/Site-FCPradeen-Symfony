@@ -2,19 +2,76 @@
 
 {% block title %}Hello DefaultController!{% endblock %}
 
+
+ {% block stylesheets %}
+    {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/default/accueil.css') }}">
+ {% endblock %}
+
+
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/maxime/IdeaProjects/Site-FCPradeen-Symfony/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/maxime/IdeaProjects/Site-FCPradeen-Symfony/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="affichageSlider">
+        <div class="slider" id="slider">
+            <div class="slides">
+                {% set firstSlide = 1 %}
+                {% for sponsor in sponsors %}
+                    {% if firstSlide == true %}
+                        <div class="slide" id="firstSlide">
+                            <a href="{{ sponsor.url }}">
+                                <img src="/sponsor/{{ sponsor.lienImg }}" alt="" title="">
+                            </a>
+                        </div>
+                        {% set firstSlide = 0 %}
+                    {% else %}
+                        <div class="slide">
+                            <a href="{{ sponsor.url }}">
+                                <img src="/sponsor/{{ sponsor.lienImg }}" alt="" title="">
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="navigation-manual">
+                <div class="dispositionBtnCarousel">
+                    <div class="manual-btn selected" id="auto-btn0"></div>
+                    <div class="manual-btn notSelected" id="auto-btn1"></div>
+                    <div class="manual-btn notSelected" id="auto-btn2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let count = 0;
+        let countBefore = 2;
+
+        function carousel(){
+            document.getElementById("firstSlide").style.marginLeft = "-" + (count * 25) + "%";
+            document.getElementById("auto-btn" + count).classList.add("selected")
+            document.getElementById("auto-btn" + count).classList.remove("notSelected")
+            document.getElementById("auto-btn" + countBefore).classList.add("notSelected")
+            document.getElementById("auto-btn" + countBefore).classList.remove("selected")
+            countBefore = count;
+            count++;
+            if(count > 2 ) count = 0;
+
+        }
+
+        function updateInterval(radio){
+            clearInterval(move);
+            count = radio;
+            move = setInterval(carousel, 5000);
+        }
+
+        carousel();
+        let move = setInterval(carousel, 5000);
+
+    </script>
+
+
+
+
+
+
 {% endblock %}

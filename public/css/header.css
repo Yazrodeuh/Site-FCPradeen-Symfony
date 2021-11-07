@@ -92,6 +92,7 @@ header{
     align-items: center;
     width: 100%;
     padding: 1% 2%;
+    border-bottom: 1px solid var(--green-color);
 }
 
 
@@ -100,17 +101,4 @@ header{
     background-color: var(--green-color);
     color: white;
 
-}
-
-
-.connexionHeader{
-    background-color: white;
-    border-radius: 50px 0 0 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.connexionHeader a{
-    color: var(--green-color);
 }
