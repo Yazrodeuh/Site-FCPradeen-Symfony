@@ -41,7 +41,7 @@ class Sponsor
         return $this->id;
     }
 
-    public function getNomSponsor(): ?string
+    public function getNomSponsor(): string
     {
         return $this->nomSponsor;
     }
@@ -53,7 +53,7 @@ class Sponsor
         return $this;
     }
 
-    public function getLienImg(): ?string
+    public function getLienImg(): string
     {
         return $this->lienImg;
     }

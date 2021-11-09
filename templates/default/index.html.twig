@@ -11,10 +11,14 @@
 
 {% block body %}
 
-
+    <style>
+        .slide{
+            width: {{ 100 / (sponsors | length) }}%;
+        }
+    </style>
     <div class="affichageSlider">
         <div class="slider" id="slider">
-            <div class="slides">
+            <div class="slides" style="width: {{ sponsors | length * 100 }}%">
                 {% set firstSlide = 1 %}
                 {% for sponsor in sponsors %}
                     {% if firstSlide == true %}
@@ -33,39 +37,46 @@
                     {% endif %}
                 {% endfor %}
             </div>
-            <div class="navigation-manual">
+            {# <div class="navigation-manual">
                 <div class="dispositionBtnCarousel">
-                    <div class="manual-btn selected" id="auto-btn0"></div>
-                    <div class="manual-btn notSelected" id="auto-btn1"></div>
-                    <div class="manual-btn notSelected" id="auto-btn2"></div>
+                    <div class="manual-btn" id="auto-btn0"> < </div>
+                    <div class="manual-btn" id="auto-btn1"> > </div>
                 </div>
-            </div>
+            </div> #}
         </div>
     </div>
     <script type="text/javascript">
         let count = 0;
-        let countBefore = 2;
+        let time = 6000
 
         function carousel(){
-            document.getElementById("firstSlide").style.marginLeft = "-" + (count * 25) + "%";
-            document.getElementById("auto-btn" + count).classList.add("selected")
-            document.getElementById("auto-btn" + count).classList.remove("notSelected")
-            document.getElementById("auto-btn" + countBefore).classList.add("notSelected")
-            document.getElementById("auto-btn" + countBefore).classList.remove("selected")
-            countBefore = count;
+            document.getElementById("firstSlide").style.marginLeft = "-" + (count * {{ 100 / (sponsors | length) }}) + "%";
             count++;
-            if(count > 2 ) count = 0;
-
+            if(count > {{ (sponsors | length) - 1 }} ) count = 0;
         }
+
+        /*document.getElementById("auto-btn0").addEventListener("click", function (){
+            updateInterval(count - 1);
+        })
+
+        document.getElementById("auto-btn1").addEventListener("click", function (){
+            updateInterval(count + 1);
+        })*/
 
         function updateInterval(radio){
             clearInterval(move);
-            count = radio;
-            move = setInterval(carousel, 5000);
+            if(radio < 0){
+              count = {{ (sponsors | length) - 1 }};
+            } else if(radio > {{ (sponsors | length) - 1 }}){
+                count = 0;
+            }else {
+                count = radio;
+            }
+            move = setInterval(carousel, time);
         }
 
         carousel();
-        let move = setInterval(carousel, 5000);
+        let move = setInterval(carousel, time);
 
     </script>
 

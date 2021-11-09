@@ -11,8 +11,13 @@ body{
     margin: auto;
 }
 
+header{
+    z-index: 20;
+}
+
 main{
     font-size: 18px;
+    z-index: 1;
 }
 
 .flexOne{   flex: 1;    }
