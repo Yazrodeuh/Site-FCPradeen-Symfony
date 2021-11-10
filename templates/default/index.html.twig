@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}
+     Football Club Pradéen Site Officiel
+    {{ parent() }}
+{% endblock %}
 
 
  {% block stylesheets %}
@@ -10,6 +13,20 @@
 
 
 {% block body %}
+
+    <div class="accueilTitre">
+        <div class="flexOne">
+            <div>
+                <h1>Football Club Pradéen</h1>
+            </div>
+        </div>
+        <div class="flexOne">
+            <img src="{{ asset('img/logo/logo-fcp.png') }}" alt="" width="200" height="200">
+        </div>
+    </div>
+
+
+
 
     <style>
         .slide{

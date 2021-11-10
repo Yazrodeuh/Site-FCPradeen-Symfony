@@ -35,7 +35,7 @@ main{
     align-items: center;
 }
 
-.titrePage div h1{
+h1{
     color: var(--green-color);
-    font-size: 35px;
+    font-size: 40px;
 }

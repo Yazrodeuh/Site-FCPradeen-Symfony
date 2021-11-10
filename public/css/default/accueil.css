@@ -1,5 +1,16 @@
+.accueilTitre{
+    padding: 3% 6%;
+    display: flex;
+}
+
+.accueilTitre .flexOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .affichageSlider{
-    margin: 3% 6%
+    padding: 3% 25%
 }
 
 .slider{
@@ -8,6 +19,7 @@
     overflow: hidden;
     border-radius: 20px;
     position: relative;
+    border: 2px solid var(--green-color);
 }
 
 .slides{
@@ -17,14 +29,13 @@
     position: relative;
 }
 
-.slides input{
-    display: none;
-}
 
 .slide{
     transition: 2s;
     position: relative;
 }
+
+
 
 .slide a{
     width: 100%;
